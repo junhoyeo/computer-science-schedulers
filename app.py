@@ -7,14 +7,17 @@ with open('./process.json') as proc_file:
 for proc in procs:
   proc['started'] = 0
   proc['terminated'] = 0
-
-print(procs)
+  proc['wait'] = 0
 
 queue = []
 current = None
 time = 0
 while True:
   print('t={}'.format(time))
+
+  # HRRN을 위해서 대기시간 구하기
+  for proc in queue:
+    proc['wait'] = time - proc['arrival']
 
   # 도착 프로세스 확인
   arrived = [proc for proc in procs if proc['arrival'] == time]
@@ -32,7 +35,8 @@ while True:
   if not current:
     try:
       # current = schedulers.first_in_first_out(queue)
-      current = schedulers.shortest_job_first(queue)
+      # current = schedulers.shortest_job_first(queue)
+      current = schedulers.highest_response_ration_next(queue)
     except:
       break
     print('p{} started'.format(current['id']))

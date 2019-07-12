@@ -100,3 +100,46 @@ p1 terminated
 AWT: 7.25
 ATT: 12.5
 ```
+
+## HRRN (Highest Response Ratio Next)
+```
+t=0
+p0 started
+t=1
+t=2
+t=3
+t=4
+t=5
+t=6
+t=7
+t=8
+t=9
+p0 terminated
+p2 started
+t=10
+t=11
+p2 terminated
+p3 started
+t=12
+t=13
+t=14
+t=15
+p3 terminated
+p1 started
+t=16
+t=17
+t=18
+t=19
+t=20
+t=21
+p1 terminated
+
+=== results ===
+#p0, wait time: 0, termination time: 9
+#p1, wait time: 14, termination time: 20
+#p2, wait time: 7, termination time: 9
+#p3, wait time: 8, termination time: 12
+
+AWT: 7.25
+ATT: 12.5
+```

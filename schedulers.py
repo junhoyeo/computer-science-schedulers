@@ -5,3 +5,11 @@ def shortest_job_first(queue):
   proc = sorted(queue, key=lambda k: k['execution'])[0]
   queue.remove(proc)
   return proc
+
+def highest_response_ration_next(queue):
+  def priority(proc):
+    return (proc['wait'] + proc['execution']) / proc['execution']
+  
+  proc = sorted(queue, key=lambda k: priority(k), reverse=True)[0]
+  queue.remove(proc)
+  return proc
