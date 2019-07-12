@@ -6,7 +6,7 @@ def shortest_job_first(queue):
   queue.remove(proc)
   return proc
 
-def highest_response_ration_next(queue):
+def highest_response_ratio_next(queue):
   def priority(proc):
     return (proc['wait'] + proc['execution']) / proc['execution']
   

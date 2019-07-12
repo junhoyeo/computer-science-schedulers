@@ -36,7 +36,7 @@ while True:
     try:
       # current = schedulers.first_in_first_out(queue)
       # current = schedulers.shortest_job_first(queue)
-      current = schedulers.highest_response_ration_next(queue)
+      current = schedulers.highest_response_ratio_next(queue)
     except:
       break
     print('p{} started'.format(current['id']))
