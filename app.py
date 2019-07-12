@@ -1,4 +1,6 @@
 import json
+import schedulers
+
 with open('./process.json') as proc_file:
   procs = json.load(proc_file)
 
@@ -29,7 +31,8 @@ while True:
   # 현재 프로세스 확인
   if not current:
     try:
-      current = queue.pop(0)
+      # current = schedulers.first_in_first_out(queue)
+      current = schedulers.shortest_job_first(queue)
     except:
       break
     print('p{} started'.format(current['id']))
