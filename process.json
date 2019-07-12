@@ -1,0 +1,6 @@
+[
+  { "id": 0, "arrival": 0, "execution": 9 },
+  { "id": 1, "arrival": 1, "execution": 6 },
+  { "id": 2, "arrival": 2, "execution": 2 },
+  { "id": 3, "arrival": 3, "execution": 4 }
+]
